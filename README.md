@@ -1,4 +1,4 @@
-Lab 1 - Basic Java Programming
+# Lab 1 - Basic Java Programming
 
 This lab covers the basics of Java programming, including open questions regarding java common knowledge, as well as implementation and tests. The questions are the following:
 
