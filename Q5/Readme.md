@@ -1,5 +1,4 @@
-# Inheritance, overloading and overcharge. The Geometric
-library
+# Inheritance, overloading and overcharge. The Geometric library
 
 In this exercise I created a java package that contains an abstract class called GeometricFigure, and 3 objects that inherit from it, which are Circle, Rectangle and Square. The following bullets ilustrates each step taken to complete this final Question of lab 1.
 
