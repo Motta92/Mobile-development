@@ -8,17 +8,21 @@ public class exe {
 		// TODO Auto-generated method stub
 		List<Student> list = new ArrayList<Student>();
 		
-		list.add(new Student("luisa","motta",22));
-		list.add(new Student("carlos","motta",23));
-		list.add(new Student("laura","motta",15));
+		list.add(new Student("luisa","Porras",27));
+		list.add(new Student("carlos","Motta",23));
+		list.add(new Student("xonia","Gonzalez",15));
 		
 		
 		ageSortStrategy s1 = new ageSortStrategy();
+		lastNameSortStrategy s2 = new lastNameSortStrategy();
+		nameSortStrategy s3 = new nameSortStrategy();
 		
 		s1.sortStudents(list);
+		s2.sortStudents(list);
+		s3.sortStudents(list);
 		
 		for(Student s : list){
-			System.out.println(s.getAge());
+			System.out.println(s.getName());
 		}
 		
 	}
