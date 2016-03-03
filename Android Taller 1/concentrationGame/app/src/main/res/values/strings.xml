@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Banner -->
+    <string name="app_name">concentrationGame</string>
+
+    <!-- Banner -->
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+
+    <!-- First Activity -->
+    <string name="play">Play</string>
+    <string name="secondButton">Language</string>
+    <string name="thirdButton">About</string>
+    <string name="title_activity_select_players">SelectPlayers</string>
+
+    <!-- Second Activity -->
+    <string name="numPlayers">Num Players:</string>
+    <string name="title_activity_game_screen">GameScreen</string>
+    <string name="title_activity_winner_table">WinnerTable</string>
+
+    <!-- Third Activity -->
+
+    <!-- Fourth Activity -->
+    <string name="replay">Replay</string>
+
+</resources>
