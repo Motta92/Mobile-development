@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ToolMenu -->
+    <string name="toMainMenu">Menu Principal</string>
+    <string name="action_settings">Opciones</string>
+    <string name="action_exit">Salir</string>
+
+    <!-- Main Activity -->
+    <string name="app_name">Juego de Concentración</string>
+    <string name="play">Jugar</string>
+    <string name="language">Lenguaje</string>
+    <string name="about">Acerca</string>
+
+    <!-- Select Activity -->
+    <string name="title_activity_select_players">Seleccionar Jugadores</string>
+    <string name="numPlayers">Numero Jugadores:</string>
+    <string name="not_enough_players">No hay suficientes jugadores, por favor añadir al menos 1 jugador</string>
+
+    <!-- Add Player Activity -->
+    <string name="add_player">Añadir</string>
+
+    <!-- Game Activity -->
+    <string name="title_activity_game_screen">Pantalla de Juego</string>
+
+    <!-- Winner Activity -->
+    <string name="replay">Volver a Jugar</string>
+    <string name="title_activity_winner_table">Tabla de Posiciones</string>
+    <string name="new_game">Juego Nuevo</string>
+
+    <!-- Add Activity -->
+    <string name="name_placeholder">Nombre</string>
+
+    <!-- popup -->
+    <string name="about_text">Autor: Carlos Motta \nEmail: Carlos93504@hotmail.com</string>
+</resources>
