@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by Carlos on 3/27/2016.
  */
-public class asyncTaskGetServiceInfo extends AsyncTask<Void, Void, String> {
+public class asyncTaskGetContactsInfo extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
         // The connection URL

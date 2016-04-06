@@ -3,6 +3,7 @@
     package="com.motty.motz.proyectoandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,6 +23,10 @@
         <activity
             android:name=".contacts"
             android:label="@string/title_activity_contacts"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".messages"
+            android:label="@string/title_activity_messages"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
