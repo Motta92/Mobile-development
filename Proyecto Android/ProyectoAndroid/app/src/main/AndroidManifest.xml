@@ -10,8 +10,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="AA_DB_NAME" android:value="motz.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="1" />
+
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,12 +24,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".contacts"
+            android:name=".Activities.contacts"
             android:label="@string/title_activity_contacts"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".messages"
+            android:name=".Activities.messages"
             android:label="@string/title_activity_messages"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.files"
+            android:label="@string/title_activity_files"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -1,19 +1,19 @@
-package com.motty.motz.proyectoandroid;
+package com.motty.motz.proyectoandroid.Services;
+
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Created by Carlos on 3/29/2016.
+ * Created by Carlos on 3/27/2016.
  */
-public class asyncTaskGetMessagesInfo extends AsyncTask<String, Void, String> {
+public class asyncTaskGetContactsInfo extends AsyncTask<Void, Void, String> {
     @Override
-    protected String doInBackground(String... params) {
+    protected String doInBackground(Void... params) {
         // The connection URL
-        String url = "http://10.0.2.2:8090/rest/messages/"+params[0]+"/"+params[1];
+        String url = "http://10.0.2.2:8090/rest/contacts/3";
 
         // Create a new RestTemplate instance
         RestTemplate restTemplate = new RestTemplate();
@@ -25,6 +25,5 @@ public class asyncTaskGetMessagesInfo extends AsyncTask<String, Void, String> {
         String result = restTemplate.getForObject(url, String.class, "Android");
 
         return result;
-
     }
 }

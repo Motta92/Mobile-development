@@ -1,9 +1,9 @@
-package com.motty.motz.proyectoandroid;
+package com.motty.motz.proyectoandroid.TemplateClasses;
 
 /**
  * Created by Carlos on 3/27/2016.
  */
-public class postClass {
+public class contactTemplateClass {
     private int userId;
     private String userName;
     private String nombre;

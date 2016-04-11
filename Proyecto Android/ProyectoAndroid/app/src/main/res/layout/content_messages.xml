@@ -9,12 +9,51 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.motty.motz.proyectoandroid.messages"
+    tools:context=".Activities.messages"
     tools:showIn="@layout/activity_messages">
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:id="@+id/sendIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/send"
+        android:onClick="sendMessage"/>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/profileImage"
+        android:textSize="40sp"/>
+
+    <EditText
+        android:id="@+id/messageSendText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/sendIcon"
+        android:layout_alignParentBottom="true"
+        android:hint="Send a message plox"/>
+
+
 
     <ListView
         android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:layout_above="@id/messageSendText"
+        android:smoothScrollbar="true"
+        android:scrollbars="vertical"/>
+
 
 </RelativeLayout>

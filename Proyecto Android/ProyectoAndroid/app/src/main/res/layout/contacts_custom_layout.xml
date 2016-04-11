@@ -22,4 +22,20 @@
         android:paddingBottom="10dp"
         android:text="text"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/messages"
+        android:id="@+id/toMessages"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/toFiles" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/files"
+        android:id="@+id/toFiles"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

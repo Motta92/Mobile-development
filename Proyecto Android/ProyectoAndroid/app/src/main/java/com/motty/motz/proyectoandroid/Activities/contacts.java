@@ -1,21 +1,15 @@
-package com.motty.motz.proyectoandroid;
+package com.motty.motz.proyectoandroid.Activities;
 
 import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.motty.motz.proyectoandroid.CustomAdapters.customArrayAdapterContacts;
+import com.motty.motz.proyectoandroid.R;
+import com.motty.motz.proyectoandroid.Services.asyncTaskGetContactsInfo;
+import com.motty.motz.proyectoandroid.TemplateClasses.contactTemplateClass;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +19,7 @@ import java.util.concurrent.ExecutionException;
 public class contacts extends ListActivity{
 
     String result;
-    List<postClass> contactsList;
+    List<contactTemplateClass> contactsList;
     ArrayList<String> obtainedInfo = new ArrayList<String>();
     ListView lv;
 
@@ -48,7 +42,7 @@ public class contacts extends ListActivity{
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            contactsList = mapper.readValue(result, mapper.getTypeFactory().constructCollectionType(List.class, postClass.class));
+            contactsList = mapper.readValue(result, mapper.getTypeFactory().constructCollectionType(List.class, contactTemplateClass.class));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,7 +62,7 @@ public class contacts extends ListActivity{
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-
+    /*
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Item " + position,
                 Toast.LENGTH_SHORT);
@@ -78,6 +72,6 @@ public class contacts extends ListActivity{
         Intent i = new Intent(contacts.this,messages.class);
         i.putExtra("id", contactsList.get(position).getUserId());
         this.startActivity(i);
-
+    */
     }
 }

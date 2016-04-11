@@ -1,4 +1,4 @@
-package com.motty.motz.proyectoandroid;
+package com.motty.motz.proyectoandroid.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,14 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import com.motty.motz.proyectoandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 

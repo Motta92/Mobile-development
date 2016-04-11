@@ -1,4 +1,5 @@
-package com.motty.motz.proyectoandroid;
+package com.motty.motz.proyectoandroid.TemplateClasses;
+
 
 import java.util.Date;
 
