@@ -21,13 +21,11 @@ public class contacts extends ListActivity{
     String result;
     List<contactTemplateClass> contactsList;
     ArrayList<String> obtainedInfo = new ArrayList<String>();
-    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
-        lv = getListView();
 
         asyncTaskGetContactsInfo myAsyncTask = new asyncTaskGetContactsInfo();
 
@@ -53,11 +51,8 @@ public class contacts extends ListActivity{
         }
         */
 
-
         customArrayAdapterContacts activityAdapter = new customArrayAdapterContacts(this,R.layout.contacts_custom_layout,contactsList);
         setListAdapter(activityAdapter);
-
-
     }
 
     @Override

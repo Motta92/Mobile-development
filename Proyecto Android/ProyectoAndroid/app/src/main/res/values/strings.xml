@@ -9,4 +9,8 @@
     <string name="messages">Messages</string>
     <string name="files">Files</string>
 
+    <string name="sendFile">Send</string>
+    <string name="filterByName">Filter By Name</string>
+    <string name="filterByDate">Filter By Date</string>
+
 </resources>

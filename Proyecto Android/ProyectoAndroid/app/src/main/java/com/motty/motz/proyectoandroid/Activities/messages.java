@@ -10,13 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.activeandroid.ActiveAndroid;
-import com.activeandroid.Configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.motty.motz.proyectoandroid.CustomAdapters.customArrayAdapterMessages;
 import com.motty.motz.proyectoandroid.DB.messagesDB;
 import com.motty.motz.proyectoandroid.R;
 import com.motty.motz.proyectoandroid.Services.asyncTaskGetMessagesInfo;
-import com.motty.motz.proyectoandroid.Services.asyncTaskSendMessageInfo;
+import com.motty.motz.proyectoandroid.Services.asyncTaskPostMessageInfo;
 import com.motty.motz.proyectoandroid.TemplateClasses.messageTemplateClass;
 
 import java.io.IOException;
@@ -68,7 +67,6 @@ public class messages extends ListActivity {
         }
 
         messagesDB.insertIntoDB(messageList);
-        Log.d("MotzLength",);
 
         customArrayAdapterMessages messagesAdapter = new customArrayAdapterMessages(this,R.layout.messages_custom_layout,chatMessages);
 
@@ -81,7 +79,7 @@ public class messages extends ListActivity {
     public void sendMessage(View view) {
         EditText messageEditText = (EditText) findViewById(R.id.messageSendText);
 
-        asyncTaskSendMessageInfo myAsyncTaskPost = new asyncTaskSendMessageInfo();
+        asyncTaskPostMessageInfo myAsyncTaskPost = new asyncTaskPostMessageInfo();
         String data = messageEditText.getText().toString();
         Integer id = getIntent().getIntExtra("id", 0);
 
@@ -94,6 +92,7 @@ public class messages extends ListActivity {
         }
 
         messagesDB.insertIntoDB(messageList);
+        // Refresh page
 
     }
 }

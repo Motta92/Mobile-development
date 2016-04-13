@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by Carlos on 4/10/2016.
  */
-public class asyncTaskSendMessageInfo extends AsyncTask<String, Void, Void> {
+public class asyncTaskPostMessageInfo extends AsyncTask<String, Void, Void> {
 
     @Override
     protected Void doInBackground(String... params) {

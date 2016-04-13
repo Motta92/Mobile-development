@@ -12,4 +12,56 @@
     tools:context=".Activities.files"
     tools:showIn="@layout/activity_files">
 
+
+    <ImageView
+        android:id="@+id/profileImageFiles"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/userNameFiles"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/profileImageFiles"
+        android:textSize="40sp"/>
+
+    <Button
+        android:id="@+id/sendFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/sendFile"
+        android:onClick="sendFile"/>
+
+    <Button
+        android:id="@+id/filterByDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/sendFile"
+        android:layout_alignParentBottom="true"
+        android:text="@string/filterByDate"
+        android:onClick="filterByDate"/>
+
+    <Button
+        android:id="@+id/filterByName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/filterByDate"
+        android:layout_alignParentBottom="true"
+        android:text="@string/filterByName"
+        android:onClick="filterByName"/>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/sendFile"
+        android:layout_below="@id/profileImageFiles"
+        android:smoothScrollbar="true"
+        android:scrollbars="vertical"/>
+
 </RelativeLayout>
