@@ -112,20 +112,12 @@ public class messages extends ListActivity {
 
 
             // Refresh page
-            //finish();
-            //startActivity(getIntent().addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+            finish();
+            startActivity(getIntent());
         }
         else{
             Toast.makeText(messages.this, "Empty Input Text", Toast.LENGTH_SHORT).show();
         }
     }
 
-    @Override
-    protected void onRestart() {
-        // TODO Auto-generated method stub
-        super.onRestart();
-        Intent i = new Intent(this, messages.class);  //your class
-        startActivity(i);
-        finish();
-    }
 }

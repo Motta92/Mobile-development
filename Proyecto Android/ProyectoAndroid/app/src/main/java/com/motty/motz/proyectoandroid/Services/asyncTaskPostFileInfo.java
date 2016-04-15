@@ -32,9 +32,10 @@ public class asyncTaskPostFileInfo extends AsyncTask<String, Void, Void> {
 
     @Override
     protected Void doInBackground(String... params) {
-        /*
+
         // The connection URL
-        String url = "http://10.0.2.2:8090/rest/files/"+params[0]+"/"+params[1];
+        //String url = "http://10.0.2.2:8090/rest/files/"+params[0]+"/"+params[1];
+        String url = "http://172.17.69.220:8090/rest/files/"+params[0]+"/"+params[1];
 
         // Create a new RestTemplate instance
         RestTemplate restTemplate = new RestTemplate();
@@ -48,9 +49,9 @@ public class asyncTaskPostFileInfo extends AsyncTask<String, Void, Void> {
 
         // Make the HTTP GET request, marshaling the response to a String
         String result = restTemplate.postForObject(url,map,String.class);
-        */
 
 
+        /*
         FileSystemResource resource = new FileSystemResource(params[2]);
         //Resource resource = new ClassPathResource(params[2]);
         formData = new LinkedMultiValueMap<String, Object>();
@@ -70,7 +71,7 @@ public class asyncTaskPostFileInfo extends AsyncTask<String, Void, Void> {
 
         Log.d("MotzPostLog", response.getBody());
 
-
+        */
         return null;
     }
 

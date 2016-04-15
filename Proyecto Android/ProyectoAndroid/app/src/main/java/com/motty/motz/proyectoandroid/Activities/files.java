@@ -87,11 +87,13 @@ public class files extends ListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         fileTemplateClass row = filesList.get(position);
+        /*
         Toast toast = Toast.makeText(v.getContext(),
                 "File " + position,
                 Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
+        */
 
         // Use Download Manager o AsyncTask
 
@@ -115,14 +117,14 @@ public class files extends ListActivity {
         Long reference = manager.enqueue(request);
     }
 
-    public void sendFile(View view){
+    public void sendFile2(View view){
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("file/*");
         startActivityForResult(intent, RESULT_LOAD_FILE);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    //@Override
+    protected void onActivityResult2(int requestCode, int resultCode, Intent intent) {
         if (requestCode == RESULT_LOAD_FILE)
         {
             if (resultCode == RESULT_OK)
@@ -148,7 +150,6 @@ public class files extends ListActivity {
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         }
-
                     }
 
                 }
@@ -157,13 +158,14 @@ public class files extends ListActivity {
         }
     }
 
-    public void sendFile2(View view) {
+    public void sendFile(View view) {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         this.startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
     }
 
-    public void onActivityResult2(int requestCode, int resultCode, Intent data) {
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         // Get image from image gallery
@@ -194,6 +196,8 @@ public class files extends ListActivity {
 
             // Create an image file name
             //String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            finish();
+            startActivity(getIntent());
         }
     }
 

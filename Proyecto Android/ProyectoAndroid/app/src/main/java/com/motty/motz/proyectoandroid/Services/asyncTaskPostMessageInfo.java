@@ -16,7 +16,8 @@ public class asyncTaskPostMessageInfo extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... params) {
         // The connection URL
-        String url = "http://10.0.2.2:8090/rest/messages";
+        //String url = "http://10.0.2.2:8090/rest/messages";
+        String url = "http://172.17.69.220:8090/rest/messages";
 
         // Create a new RestTemplate instance
         RestTemplate restTemplate = new RestTemplate();
