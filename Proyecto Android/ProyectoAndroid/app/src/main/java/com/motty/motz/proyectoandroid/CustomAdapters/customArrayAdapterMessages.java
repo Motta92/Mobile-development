@@ -17,8 +17,8 @@ import java.util.List;
 /**
  * Created by Carlos on 3/29/2016.
  */
-public class customArrayAdapterMessages extends ArrayAdapter<messagesDB> {
-    public customArrayAdapterMessages(Context context, int resource, List<messagesDB> objects) {
+public class customArrayAdapterMessages extends ArrayAdapter<messageTemplateClass> {
+    public customArrayAdapterMessages(Context context, int resource, List<messageTemplateClass> objects) {
         super(context, resource, objects);
     }
 
@@ -29,7 +29,7 @@ public class customArrayAdapterMessages extends ArrayAdapter<messagesDB> {
     public View getView(int position, View convertView, ViewGroup parent){
         ViewHolder viewHolder = null;
 
-        messagesDB row = getItem(position);
+        messageTemplateClass row = getItem(position);
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if(convertView == null){
@@ -42,7 +42,7 @@ public class customArrayAdapterMessages extends ArrayAdapter<messagesDB> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.messageText.setText(row.msg);
+        viewHolder.messageText.setText(row.getText());
 
         return convertView;
     }

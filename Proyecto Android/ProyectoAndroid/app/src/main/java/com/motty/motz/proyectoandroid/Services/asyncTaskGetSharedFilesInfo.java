@@ -12,7 +12,7 @@ public class asyncTaskGetSharedFilesInfo extends AsyncTask<String, Void, String>
     @Override
     protected String doInBackground(String... params) {
         // The connection URL
-        String url = "http://10.0.2.2:8090/rest/shared_files/"+params[0]+"/"+params[1];
+        final String url = "http://10.0.2.2:8090/rest/shared_files/"+params[0]+"/"+params[1];
 
         // Create a new RestTemplate instance
         RestTemplate restTemplate = new RestTemplate();

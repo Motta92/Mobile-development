@@ -1,6 +1,7 @@
 package com.motty.motz.proyectoandroid.Activities;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -8,10 +9,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.activeandroid.ActiveAndroid;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.motty.motz.proyectoandroid.CustomAdapters.customArrayAdapterMessages;
+import com.motty.motz.proyectoandroid.DB.MessagesDatabase;
 import com.motty.motz.proyectoandroid.DB.messagesDB;
 import com.motty.motz.proyectoandroid.R;
 import com.motty.motz.proyectoandroid.Services.asyncTaskGetMessagesInfo;
@@ -26,9 +29,13 @@ import java.util.concurrent.ExecutionException;
 public class messages extends ListActivity {
     String result;
     List<messageTemplateClass> messageList;
-    ArrayList<messagesDB> chatMessages = new ArrayList<messagesDB>();
-    List<messagesDB> resultMessagesQuery;
+    //ArrayList<messagesDB> chatMessages = new ArrayList<messagesDB>();
+    //List<messagesDB> resultMessagesQuery;
 
+    ArrayList<messageTemplateClass> chatMessages = new ArrayList<messageTemplateClass>();
+
+    MessagesDatabase db;
+    customArrayAdapterMessages messagesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +44,10 @@ public class messages extends ListActivity {
 
         // Initializing db through ActiveAndroid
         //Configuration dbConfiguration = new Configuration.Builder(this).setDatabaseName("motz.db").create();
-
-        ActiveAndroid.initialize(this);
+        //ActiveAndroid.initialize(this);
         //messagesDB.deleteAll();
+
+        db = new MessagesDatabase(this, null);
 
         Integer idMessage = getIntent().getIntExtra("id", 0);
         String userName = getIntent().getStringExtra("name");
@@ -66,14 +74,21 @@ public class messages extends ListActivity {
             e.printStackTrace();
         }
 
-        messagesDB.insertIntoDB(messageList);
+        if(messageList != null){
+            //messagesDB.insertIntoDB(messageList);
+            for(int i=0; i<messageList.size(); ++i){
+                db.addMessage(new messageTemplateClass(messageList.get(i).getFrom(), messageList.get(i).getTo(),messageList.get(i).getText()));
+            }
+        }
 
-        customArrayAdapterMessages messagesAdapter = new customArrayAdapterMessages(this,R.layout.messages_custom_layout,chatMessages);
+        db.getMessages(chatMessages,idMessage,3);
 
-        resultMessagesQuery = messagesDB.getMessagesFromTo(idMessage, 3);
-
-        messagesAdapter.addAll(resultMessagesQuery);
+        messagesAdapter = new customArrayAdapterMessages(this,R.layout.messages_custom_layout,chatMessages);
         setListAdapter(messagesAdapter);
+
+        //resultMessagesQuery = messagesDB.getMessagesFromTo(idMessage, 3);
+        //messagesAdapter.addAll(resultMessagesQuery);
+        //setListAdapter(messagesAdapter);
     }
 
     public void sendMessage(View view) {
@@ -83,16 +98,34 @@ public class messages extends ListActivity {
         String data = messageEditText.getText().toString();
         Integer id = getIntent().getIntExtra("id", 0);
 
-        try {
-            myAsyncTaskPost.execute("3",id.toString(),data).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+        if(!data.trim().isEmpty()){
+            try {
+                myAsyncTaskPost.execute("3",id.toString(),data).get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            //messagesDB.addMessage(data, id, 3);
+            db.addMessage(new messageTemplateClass(id, 3, data));
+
+
+            // Refresh page
+            //finish();
+            //startActivity(getIntent().addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
         }
+        else{
+            Toast.makeText(messages.this, "Empty Input Text", Toast.LENGTH_SHORT).show();
+        }
+    }
 
-        messagesDB.insertIntoDB(messageList);
-        // Refresh page
-
+    @Override
+    protected void onRestart() {
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(this, messages.class);  //your class
+        startActivity(i);
+        finish();
     }
 }

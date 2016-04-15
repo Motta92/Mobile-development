@@ -13,6 +13,22 @@ public class messageTemplateClass {
     private String text;
     private String date;
 
+    public messageTemplateClass(){}
+    public messageTemplateClass( Integer from, Integer to, String text, String date) {
+        this.date = date;
+        this.text = text;
+        this.to = to;
+        this.from = from;
+    }
+
+    public messageTemplateClass( Integer from, Integer to, String text) {
+        this.text = text;
+        this.to = to;
+        this.from = from;
+    }
+
+
+
     public String getDate() {
         return date;
     }

@@ -13,7 +13,7 @@ public class asyncTaskGetContactsInfo extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
         // The connection URL
-        String url = "http://10.0.2.2:8090/rest/contacts/3";
+        final String url = "http://10.0.2.2:8090/rest/contacts/3";
 
         // Create a new RestTemplate instance
         RestTemplate restTemplate = new RestTemplate();
