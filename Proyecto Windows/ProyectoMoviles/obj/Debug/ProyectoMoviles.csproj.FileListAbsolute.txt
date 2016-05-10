@@ -1,0 +1,14 @@
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\bin\Debug\ProyectoMoviles.exe.config
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\bin\Debug\ProyectoMoviles.exe
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\bin\Debug\ProyectoMoviles.pdb
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles.csprojResolveAssemblyReference.cache
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\MainWindow.g.cs
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\App.g.cs
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles_MarkupCompile.cache
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles_MarkupCompile.lref
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\MainWindow.baml
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles.g.resources
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles.Properties.Resources.resources
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles.csproj.GenerateResource.Cache
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles.exe
+c:\users\carlos\documents\visual studio 2015\Projects\ProyectoMoviles\ProyectoMoviles\obj\Debug\ProyectoMoviles.pdb
