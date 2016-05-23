@@ -1,0 +1,38 @@
+﻿<Window x:Class="ProyectoMoviles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoMoviles"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="510">
+    
+    <Window.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <ListView Margin="10" Name="ContactListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        
+                        <TextBlock Text="Name: " />
+                        <TextBlock Text="{Binding nombre}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="username: " />
+                        <TextBlock Text="{Binding userName}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                            <Button Content="Messages" Name="Messages" Click="toMessages"  />
+                            <Button Content="Files" Name="Files" Click="toFiles" />
+                        </StackPanel>
+                        
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
