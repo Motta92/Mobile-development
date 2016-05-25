@@ -4,6 +4,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -46,10 +47,43 @@ namespace ProyectoMoviles.Views
                 DBmanager.addNewMessage(m);
             }
 
-            DBmanager.getMessages(messages);
+            DBmanager.getMessages(messages, contactId, 3);
 
             MessagesListView.ItemsSource = messages;
             
+        }
+
+        private void Send_message(object sender, RoutedEventArgs e)
+        {
+            string text = textToSend.Text;
+            string json = "{ " + '"' + "from" + '"'+ ":" + 3 + "," + '"'+"to"+ '"'+ ":" + contactId + "," + '"' + "text" + '"' + ":"+'"'+ text + '"' + "}";
+            Console.WriteLine(json);
+
+            var client = new RestClient("http://localhost:8090");
+            var request = new RestRequest("rest/messages", Method.POST);
+
+            request.AddParameter("application/json", json, ParameterType.RequestBody);
+
+            // execute the request
+            //calling server with restClient
+            var result = client.ExecuteAsync(request, (response) =>
+            {
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    //upload successfull
+                    DateTime localDate = DateTime.Now;
+                    Message newMessage = new Message(3, contactId, text, localDate.ToString());
+                    messages.Add(newMessage);
+                    DBmanager.addNewMessage(newMessage);
+                }
+                else
+                {
+                    //error ocured during upload
+                    MessageBox.Show("There was a problem sending the message, please try again");
+                }
+            });
+
         }
     }
 }

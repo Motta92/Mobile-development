@@ -41,12 +41,12 @@ namespace ProyectoMoviles.DB
             db.Close();
         }
 
-        public static void getMessages(List<Message> messages) {
+        public static void getMessages(List<Message> messages, int from, int to) {
             db.Open();
             var command = db.CreateCommand();
 
             //Read from table
-            command.CommandText = "SELECT * FROM messages";
+            command.CommandText = "SELECT * FROM messages WHERE fromCol = " + from + " AND toCol = " + to + " ORDER BY dateCol ASC";
             SQLiteDataReader sqlDataReader = command.ExecuteReader();
 
             while (sqlDataReader.Read())

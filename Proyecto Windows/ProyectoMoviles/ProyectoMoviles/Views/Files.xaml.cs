@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using ProyectoMoviles.ApplicationConfig;
 using ProyectoMoviles.DB;
 using ProyectoMoviles.Model;
 using RestSharp;
@@ -94,7 +95,7 @@ namespace ProyectoMoviles.Views
             var client = new RestClient("http://localhost:8090");
             var request = new RestRequest("rest/files/" + files.ElementAt(index).id, Method.GET);
 
-            client.DownloadData(request).SaveAs("C:/Users/Carlos/Desktop/" + files.ElementAt(index).name);
+            client.DownloadData(request).SaveAs(AppConfig.path_to_download + files.ElementAt(index).name);
         }
     }
 }

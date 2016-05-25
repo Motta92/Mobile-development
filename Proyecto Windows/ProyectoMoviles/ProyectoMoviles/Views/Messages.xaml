@@ -31,8 +31,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="nameBox" BorderBrush="Black" Foreground="Black"/>
-            <Button Content="Send" Foreground="Black" Grid.Column="1"/>
+            <TextBox x:Name="textToSend" BorderBrush="Black" Foreground="Black"/>
+            <Button Content="Send" Foreground="Black" Grid.Column="1" Click="Send_message"/>
         </Grid>
 
     </Grid>

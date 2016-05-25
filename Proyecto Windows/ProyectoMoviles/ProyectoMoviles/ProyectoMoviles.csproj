@@ -82,6 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationConfig\AppConfig.cs" />
     <Compile Include="DB\DBmanager.cs" />
     <Compile Include="Model\Message.cs" />
     <Compile Include="Model\SharedFiles.cs" />
